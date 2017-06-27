@@ -122,10 +122,11 @@ gulp.task('watch', function () {
  	gulp.watch('views/**/*.pug', ['pug']);
 	gulp.watch('assets/sass/**/*.sass', ['sass']);
 	gulp.watch('assets/js/*.js', ['concat']).on('change', bs.reload);
-	gulp.watch('imgSrc/**/*.*', ['img']).on('change', bs.reload);
+	gulp.watch('img/**/*.*', ['img']).on('change', bs.reload);
 	gulp.watch('dist/*.html').on('change', bs.reload);
 });
 
+/*********** Dev Env task ***********/
 gulp.task('dev',['pug', 'sass', 'concat'])
 
 /*********** Build task ***********/
