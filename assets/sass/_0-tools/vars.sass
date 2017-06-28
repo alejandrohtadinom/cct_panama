@@ -10,3 +10,17 @@ $purple: #332D6A
 
 @mixin shadow
     box-shadow: 4px 4px 8px rgba(0, 0, 0, .4)
+
+@mixin blue-gradient
+    background: linear-gradient(135deg, $blue, $acc-blue)
+
+@mixin red-gradient
+    background: linear-gradient(135deg, $red 40%, $orange)
+
+@mixin text-gradient
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    -moz-background-clip: text
+    -moz-text-fill-color: transparent
+    -o-background-clip: text
+    -o-text-fill-color: transparent
