@@ -41,6 +41,7 @@ body
         attachment: fixed
     overflow: hidden
 
+    // Rectangles ==========
     .rectangles
         position: relative
         width: 100%
@@ -95,6 +96,7 @@ body
             right: 0
             bottom: 0
 
+// Main Navigation ==========
 .main-nav
     width: 100%
     height: auto
@@ -149,10 +151,14 @@ body
     margin: .5em 0
     font-weight: 600
     color: $blue
+    background-clip: border-box
+    transition: all .4s ease-in-out
+    
 
     &:last-child
+        background: $acc-blue
         margin: .5em 1rem
-        color: $red
+        color: $white
 
 .brand
     font-weight: 900
@@ -264,7 +270,7 @@ body
             right: 0
             bottom: -30%
             padding: .5em 1.5rem
-            background: #FAFAFA
+            background: $white
             opacity: .8
             transition: all .4s ease-in-out
 
@@ -349,7 +355,7 @@ body
         border: none
         border-radius: 4px
         padding: .5em
-        color: #FAFAFA
+        color: $white
 /*==================== Footer ====================*/
 footer
     background: $purple
