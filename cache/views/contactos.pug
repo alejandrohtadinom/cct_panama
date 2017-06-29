@@ -1,3 +1,32 @@
 extends _0-includes/layout.pug
 block content
     h1 contactos
+    
+    .section-contact
+        .container
+            form(action="process.php", id="formulario", method="POST").row
+                .col-xs-12.col-sm-4.col-md-4.col-lg-4
+                    .input
+                        input(type="text", required, name="nombre")
+                        span.bar
+                        span.highlight
+                        label(for="nombre") Nombre
+                    .input
+                        input(type="text", required, name="asunto")
+                        span.bar
+                        span.highlight
+                        label(for="email") Asunto
+                    .input
+                        input(type="email", required, name="email")
+                        span.bar
+                        span.highlight
+                        label(for="email") E-mail
+                .col-xs-12.col-sm-6.col-md-6.col-lg-6
+                    .input
+                        textarea(name="mensaje",  required)
+                        span.bar
+                        span.highlight
+                        label(for="email") Mensaje
+                .col-xs-12.col-sm-2.col-md-2.col-lg-2
+                    input(type="reset", class="reset", value="Reset").contact-btn
+                    input(type="submit", class="enviar", value="Enviar").contact-btn
