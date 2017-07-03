@@ -41,5 +41,5 @@ Thumbs.db
 src/
 dist/
 node_modules/
-cahe/
+cache/
 imgSrc/
