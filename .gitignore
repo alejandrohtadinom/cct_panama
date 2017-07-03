@@ -38,8 +38,8 @@ Thumbs.db
 
 # Theme related files #
 #######################
-src
-dist
-node_modules
-.vscode
-cahe
+src/
+dist/
+node_modules/
+cahe/
+imgSrc/
