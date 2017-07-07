@@ -13,20 +13,35 @@
 .light
     font-weight: 300
 
-@keyframes inputHighlighter
-    from
-        background: $purple
-    to
-        width: 0
-        background: transparent
+.sub-title
+    text-align: center
+    padding: 1rem
+    margin: 2em auto
+    text-transform: uppercase
+    font-weight: 900
+    font-size: 3em
+    color: lighten($text, 40)
 
+    &:after
+        content: ''
+        display: block
+        width: 0%
+        height: 4px
+        margin: 0 auto
+        background-color: $blue
+        transition: width .2s ease
+
+    &:hover
+        &:after
+            width: 20%
 /*==================== Resets ====================*/
 body
     margin: 0
     padding: 0
     box-sizing: border-box
     font-family: 'Biryani', sans-serif
-    color: #212121
+    color: $text
+    background: $bg-color
 
 .container
     margin: 0 auto
@@ -35,7 +50,7 @@ body
 .main-header
     width: 100%
     height: 100vh
-    background: url('../img/bg/bg-patt.png'), linear-gradient(135deg, rgba($blue, .9), rgba($green, .9)),  url('../img/bg/bg-classroom.png')
+    background: linear-gradient(135deg, rgba($blue, .6), rgba($green, .6)), url('../img/bg/bg-patt.png'),  url('../img/bg/bg-classroom.png')
         position: center
         size: cover
         attachment: fixed
@@ -44,8 +59,6 @@ body
     // Rectangles ==========
     .rectangles
         position: relative
-        top: 0
-        right: 0
         width: 100%
         height: 50vh
 
@@ -59,33 +72,29 @@ body
             background: $light-blue
             width: 80px
             height: 80px
-            top: 0
-            left: 0
-            z-index: 2
+            top: -80%
+            left: 30%
 
         .rectangle-2
             @include blue-gradient
             width: 220px
             height: 220px
-            top: 10%
-            right: -50%
-            z-index: 2
+            top: 0
+            right: 0
 
         .rectangle-3
             @include red-gradient
             width: 110px
             height: 110px
-            left: 5%
-            bottom: 0
-            z-index: 2
+            left: 50%
+            bottom: 20%
 
         .rectangle-4
             background: $light-blue
             width: 90px
             height: 90px
-            right: -20%
-            bottom: -10%
-            z-index: 2
+            right: 0
+            bottom: 0
 
         .rectangle-5
             background: $dark-blue url('../img/bg/bg-patt.png')
@@ -93,10 +102,8 @@ body
                 position: center
             width: 360px
             height: 360px
-            top: 0
+            top: 10%
             left: 0
-            right: 0
-            bottom: 0
 
 // Main Navigation ==========
 .main-nav
@@ -104,6 +111,11 @@ body
     height: auto
     background: $dark-blue
     box-shadow: 0 6px 2px rgba(0, 0, 0, .4)
+    z-index: 999
+
+    .brand
+        font-size: 1em
+        margin: 0
 
     .nav-item
         margin-right: .5em
@@ -116,15 +128,16 @@ body
             display: block
             color: $white
             text-decoration: none
-            font-weight: 500
-            text-transform: uppercase
+            font-weight: 300
+            text-transform: lowercase
+            font-size: 1.2em
 
             &:after
                 content: ''
                 width: 0%
                 display: block
                 height: 2px
-                margin: .5em auto
+                margin: 0 auto
                 @include red-gradient
                 transition: all .2s ease-in-out
 
@@ -132,10 +145,18 @@ body
             a
                 &:after
                     width: 80%
+        
+.menu
+    display: none
 
+
+
+.main-lead
+    z-index: 2
 .page-title
     margin-top: 7.5%
     color: $white
+    text-align: center
 
 .brand-large
     font-size: 4em
@@ -175,32 +196,30 @@ body
 /*==================== Section Description ====================*/
 .section-description
     width: 100%
-    height: 70vh
-    padding-top: 10%
-    background: linear-gradient(rgba($white, .9), rgba($white, .9)), url('../img/bg/bg-section.png')
+    padding: 5% 0
+    //background: linear-gradient(rgba($white, .1), rgba($white, .6)), url('../img/bg/bg-section.png')
 
     .img-group
         position: relative
         width: 100%
-        height: 100%
-        background: transparent
 
         img
-            position: absolute
-            right: 30%
-            max-width: 60%
-            @include shadow
-
-            &:last-child
-                top: 30%
-                right: 0
+            width: 100%
 
     .description-wrap
+        text-align: center
+
         h2
             font-weight: 400
             font-size: 1.8em
         p
-            text-align: center
+        font-weight: 300
+        font-size: 1.2em
+
+.card-lg
+    padding-bottom: 1rem
+    background-color: $white
+    @include shadow
 
 /*==================== Section Cursos ====================*/
 .section-cursos
@@ -254,7 +273,6 @@ body
 
             figcaption
                 bottom: 0
-                opacity: 1
 
         img
             width: 100%
@@ -273,12 +291,10 @@ body
             bottom: -30%
             padding: .5em 1.5rem
             background: $white
-            opacity: .8
             transition: all .4s ease-in-out
 
 /*==================== Section Contact ====================*/
 .section-contact
-    height: 50vh
 
     .input
         position: relative
@@ -358,6 +374,13 @@ body
         border-radius: 4px
         padding: .5em
         color: $white
+
+    input[type=reset]
+        @include red-gradient
+
+    input[type=submit]
+        @include blue-gradient
+
 /*==================== Footer ====================*/
 footer
     background: $purple
@@ -379,3 +402,120 @@ footer
     h2
         @include red-gradient
         @include text-gradient
+
+        &:after
+            content: ''
+            display: block
+            margin: .5em auto
+            width: 40%
+            height: 1px
+            background-color: lighten($purple, 12)
+
+@media screen and (max-width: 48em)
+
+    .main-nav
+        display: none
+
+    .menu
+        display: block
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: 0 auto
+        padding: 1rem
+        background: $white
+        transform: translateY(-100%)
+        transition: all .4s ease
+        z-index: 99
+
+    .active
+        transform: translateY(0%)
+
+        .menu-item
+            a
+                text-decoration: none
+                text-transform: uppercase
+                font-size: 2em
+                color: $blue
+                width: 100%
+                text-align: center
+                display: block
+                margin-top: 10%
+
+                &:after
+                    content: ''
+                    display: block
+                    width: 30%
+                    height: 4px
+                    margin: 0 auto
+                    @include red-gradient
+
+    .menu-btn
+        position: fixed
+        width: 4rem
+        height: 4rem
+        background: $white
+        top: 1%
+        right: 10%
+        border-radius: 100%
+        z-index: 999
+
+        .line
+            content: ''
+            display: block
+            position: absolute
+            top: 30%
+            left: 15%
+            width: 70%
+            height: 4px
+            background-color: $blue
+            border-radius: 8px
+            transition: all .2s ease
+            transform-origin: center
+
+            &:nth-child(2)
+                top: 50%
+
+            &:nth-child(3)
+                top: 70%
+
+    .open
+        .line
+            width: 0%
+
+            &:nth-child(1),
+            &:nth-child(3)
+                top: 50%
+                width: 70%
+
+            &:nth-child(1)
+                transform: rotate(45deg)
+
+            &:nth-child(3)
+                transform: rotate(-45deg)
+
+    .main-header
+        .rectangles
+
+            .rectangle-1
+                top: -90%
+                left: 15%
+
+            .rectangle-5
+                top: 10%
+                left: -15%
+
+@media screen and (max-width: 62em)
+
+    .main-header
+        .rectangles
+
+            .rectangle-1
+                top: -90%
+                left: 15%
+
+            .rectangle-5
+                top: 10%
+                left: -15%

@@ -6,7 +6,9 @@ $light-blue: #91B2FF
 $red: #ff5454
 $orange: #ff974e
 $dark-blue: #292f7b
-$purple: #332D6A
+$purple: #242b5e
+$bg-color: #e4ebf3
+$text: #444
 
 @mixin shadow
     box-shadow: 4px 4px 8px rgba(0, 0, 0, .4)
@@ -24,3 +26,10 @@ $purple: #332D6A
     -moz-text-fill-color: transparent
     -o-background-clip: text
     -o-text-fill-color: transparent
+
+@keyframes inputHighlighter
+    from
+        background: $purple
+    to
+        width: 0
+        background: transparent
