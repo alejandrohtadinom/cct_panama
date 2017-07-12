@@ -50,7 +50,7 @@ body
 .main-header
     width: 100%
     height: 100vh
-    background: linear-gradient(135deg, rgba($blue, .6), rgba($green, .6)), url('../img/bg/bg-patt.png'),  url('../img/bg/bg-classroom.png')
+    background: linear-gradient(135deg, rgba($blue, .9), rgba($green, .9)), url('../img/bg/bg-patt.png'),  url('../img/bg/bg-classroom.png')
         position: center
         size: cover
         attachment: fixed
@@ -58,43 +58,47 @@ body
 
     // Rectangles ==========
     .rectangles
-        position: relative
+        position: absolute
         width: 100%
-        height: 50vh
+        min-height: 100vh
+        top: 10%
+        left: 0
+        right: 0
+        bottom: 0
 
         .rectangle
             position: absolute
             border-radius: 25% 0 25% 0
-            transform: skewX(-20deg)
+            transform: skewX(-15deg)
             @include shadow
 
         .rectangle-1
             background: $light-blue
             width: 80px
             height: 80px
-            top: -80%
-            left: 30%
+            top: 20%
+            left: 5%
 
         .rectangle-2
             @include blue-gradient
             width: 220px
             height: 220px
-            top: 0
-            right: 0
+            top: 15%
+            right: 5%
 
         .rectangle-3
             @include red-gradient
             width: 110px
             height: 110px
-            left: 50%
-            bottom: 20%
+            left: 60%
+            bottom: 5%
 
         .rectangle-4
             background: $light-blue
             width: 90px
             height: 90px
-            right: 0
-            bottom: 0
+            right: 5%
+            bottom: -5%
 
         .rectangle-5
             background: $dark-blue url('../img/bg/bg-patt.png')
@@ -102,8 +106,8 @@ body
                 position: center
             width: 360px
             height: 360px
-            top: 10%
-            left: 0
+            top: 60%
+            left: 5%
 
 // Main Navigation ==========
 .main-nav
@@ -149,21 +153,27 @@ body
 .menu
     display: none
 
-
-
 .main-lead
+    position: absolute
+    top: 25%
+    left: 0
+    right: 0
+    bottom: 0
     z-index: 2
+
+
 .page-title
-    margin-top: 7.5%
+    margin-top: 5%
     color: $white
     text-align: center
 
 .brand-large
-    font-size: 4em
+    font-size: 6em
     font-weight: 900
+    margin: 0 auto
 
 .page-lead
-    font-size: 1.4em
+    font-size: 1.6em
 
 .cta
     padding: .6rem 1.4rem
@@ -196,25 +206,23 @@ body
 /*==================== Section Description ====================*/
 .section-description
     width: 100%
+    min-height: 60vh
     padding: 5% 0
-    //background: linear-gradient(rgba($white, .1), rgba($white, .6)), url('../img/bg/bg-section.png')
-
-    .img-group
-        position: relative
-        width: 100%
-
-        img
-            width: 100%
+    background: linear-gradient(rgba($white, .9), rgba($white, .9)), url('../img/ppl/ppl-2.jpg')
+        position: center
+        size: cover
+        attachment: fixed
 
     .description-wrap
         text-align: center
+        width: 100%
 
         h2
             font-weight: 400
-            font-size: 1.8em
+            font-size: 2em
         p
         font-weight: 300
-        font-size: 1.2em
+        font-size: 1.6em
 
 .card-lg
     padding-bottom: 1rem
@@ -292,6 +300,33 @@ body
             padding: .5em 1.5rem
             background: $white
             transition: all .4s ease-in-out
+
+.section-about
+    .about
+        color: #555
+        margin-bottom: 15%
+
+        .blurp-title
+            text-align: center
+            font-size: 4em
+            font-weight: 300
+            text-transform: uppercase
+
+            &:after
+                content: ''
+                display: block
+                margin: 0 auto
+                width: 20%
+                height: 1px
+                @include red-gradient
+        
+        .blurp
+            text-align: center
+            padding: .5em
+            font-weight: 300
+            font-size: 1.4em
+            line-height: 2.5em
+
 
 /*==================== Section Contact ====================*/
 .section-contact
@@ -411,6 +446,22 @@ footer
             height: 1px
             background-color: lighten($purple, 12)
 
+@media screen and (max-width: 62em)
+
+    .brand-large
+        font-size: 4em
+
+    .main-header
+        .rectangles
+
+            .rectangle-1
+                top: -90%
+                left: 15%
+
+            .rectangle-5
+                top: 10%
+                left: -15%
+
 @media screen and (max-width: 48em)
 
     .main-nav
@@ -503,11 +554,14 @@ footer
                 top: -90%
                 left: 15%
 
-            .rectangle-5
-                top: 10%
-                left: -15%
+            .rectangle-4
+                bottom: 30%
 
-@media screen and (max-width: 62em)
+            .rectangle-5
+                top: 40%
+                left: -10%
+
+@media screen and (max-width: 36em)
 
     .main-header
         .rectangles
@@ -516,6 +570,9 @@ footer
                 top: -90%
                 left: 15%
 
+            .rectangle-2
+                right: 15%
+
             .rectangle-5
                 top: 10%
-                left: -15%
+                left: -50%
