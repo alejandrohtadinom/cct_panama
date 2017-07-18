@@ -1,41 +1,6 @@
 header.main-header
    
-    nav.main-nav
-        .container
-            .row.end-xs.end-sm.end-md.end-lg.middle-md.middle-sm
-                .col-xs-12.col-sm-2.col-md-2.col-lg-2
-                    a(href="index.html").brand
-                        h1 CCTP
-
-                .col-xs-12.col-sm-10.col-md-10.col-lg-10
-                    .nav-menu
-                    .nav-items
-                        .row.end-xs.end-sm.end-md.end-lg.middle-md.middle-sm
-                            .col-xs-12.col-sm-2.col-md-2.col-lg-2
-                                .nav-item
-                                    a(href="cursos.html") cursos
-                            .col-xs-12.col-sm-2.col-md-2.col-lg-2
-                                .nav-item
-                                    a(href="nosotros.html") nosotros
-                            .col-xs-12.col-sm-2.col-md-2.col-lg-2
-                                .nav-item
-                                    a(href="contactos.html") contactos
-    .menu
-        .container
-            .row
-                .col-xs-12.col-sm-12
-                    .menu-item
-                        a(href="index.html") CCTP
-                    .menu-item
-                        a(href="cursos.html") cursos
-                    .menu-item
-                        a(href="nosotros.html") nosotros
-                    .menu-item
-                        a(href="contactos.html") contactos
-    .menu-btn
-        span.line
-        span.line
-        span.line
+    include navbar.pug
 
     .page-title
         .container
@@ -43,7 +8,8 @@ header.main-header
                 .col-xs-12.col-sm-12.col-md-12.col-lg-12
                     .main-lead
                         h1.brand-large CCT Panamá
-                        p.page-lead <span class="strong">capacítate</span> <span class="light">para</span> <span class="strong">triunfar<span>
+                        span.slogan Centro de Capacitación Panamá
+                        p.page-lead <span class="strong">te capacitamos</span> <span class="light">para</span> <span class="strong">triunfar<span>
                         a(href="contactos.html").cta contactos
                         a(href="cursos.html").cta saber mas
 
