@@ -1,8 +1,9 @@
 mixin curso(i, curso)
 	.col-xs-12.col-sm-12.col-md-4.col-lg-4
-		figure.card
-			img(src='img/cursos/curso-' + i + '.png', alt='')
-			figcaption
-				h4=curso
-				p Centro De Capacitación Técnica Panamá
-				p Te capacitamos para triunfar
+		a(href="contactos.html")
+			figure.card
+				img(src='img/cursos/curso-' + i + '.png', alt='')
+				figcaption
+					h4=curso
+					p Centro De Capacitación Técnica Panamá
+					p Te capacitamos para triunfar

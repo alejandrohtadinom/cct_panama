@@ -124,7 +124,7 @@ body
         text-align: left
 
         img
-            max-width: 70%
+            max-width: 100%
             margin-top: .5em
 
     .nav-item
@@ -174,8 +174,6 @@ body
     text-align: center
 
 .brand-large
-    font-size: 6em
-    font-weight: 900
     margin: 0 auto
 
 .page-lead
@@ -300,6 +298,10 @@ body
                 transform: skewY(15deg)
                 @include blue-gradient
                 z-index: -2
+
+    a
+        text-decoration: none
+        color: $text
 
     figure
         position: relative
