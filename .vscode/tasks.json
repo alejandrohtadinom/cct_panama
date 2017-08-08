@@ -5,12 +5,11 @@
   "command": "gulp",
   "isShellCommand": true,
   "args": [
-    "--no-color"
   ],
   "tasks": [
     {
       "taskName": "default",
-      "args": [],
+      "args": ["default"],
       "isBuildCommand": true,
       "problemMatcher": [
         "$lessCompile",
