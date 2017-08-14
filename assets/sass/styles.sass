@@ -34,6 +34,11 @@
     &:hover
         &:after
             width: 20%
+
+.sticky
+    position: fixed
+    z-index: 999
+
 /*==================== Resets ====================*/
 body
     margin: 0
@@ -112,20 +117,8 @@ body
 // Main Navigation ==========
 .main-nav
     width: 100%
-    height: auto
     background: $dark-blue
     box-shadow: 0 6px 2px rgba(0, 0, 0, .4)
-    z-index: 999
-
-    .brand
-        width: 100%
-        margin: 0
-        padding: 0
-        text-align: left
-
-        img
-            max-width: 100%
-            margin-top: .5em
 
     .nav-item
         margin-right: .5em
@@ -136,6 +129,7 @@ body
         
         a
             display: block
+            position: relative
             color: $white
             text-decoration: none
             font-weight: 300
@@ -146,6 +140,10 @@ body
                 content: ''
                 width: 0%
                 display: block
+                position: absolute
+                bottom: 0
+                left: 0
+                right: 0
                 height: 2px
                 margin: 0 auto
                 @include red-gradient
@@ -155,7 +153,20 @@ body
             a
                 &:after
                     width: 80%
-        
+
+    .brand
+        width: 100%
+        text-decoration: none
+        text-transform: uppercase
+        font-weight: 700
+        color: $white
+
+        h1
+            margin: 0
+            padding: 0
+.nav-wrap
+    width: 100%
+
 .menu
     display: none
 
@@ -167,6 +178,9 @@ body
     bottom: 0
     z-index: 2
 
+    img
+        max-width: 100%
+
 
 .page-title
     margin-top: 5%
@@ -177,7 +191,7 @@ body
     margin: 0 auto
 
 .page-lead
-    font-size: 1.6em
+    font-size: 3em
     font-weight: 300
 
 .cta
@@ -198,16 +212,6 @@ body
         background: $acc-blue
         margin: .5em 1rem
         color: $white
-
-.brand
-    font-weight: 900
-    font-size: 2em
-    color: $white
-    text-decoration: none
-    margin-top: 1rem
-    width: 100%
-    height: 100%
-    display: inline-block
 
 .slogan
     padding: 0
@@ -239,7 +243,8 @@ body
         width: 100%
         height: 100%
 
-        h2
+        .page-cta
+            color: $red
             font-weight: 400
             font-size: 2em
         p
@@ -499,15 +504,17 @@ footer
             margin-left: .5em
             position: relative
             bottom: .5em
-            
+
+    .footer-links
+        width: 100%
+        text-align: left
+        margin-left: 30%
+
     .footer-icon
-        max-width: 2em
+        max-width: 32px
         display: inline-block
 
 @media screen and (max-width: 62em)
-
-    .brand-large
-        font-size: 4em
 
     .main-header
         .rectangles

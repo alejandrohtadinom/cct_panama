@@ -5,4 +5,6 @@ var
 
     menu = $('.menu'),
     menuBtn = $('.menu-btn'),
-    menuItem = menu.find('.menu-item');
+    menuItem = menu.find('.menu-item'),
+
+    navBar = $('nav');
