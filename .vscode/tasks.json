@@ -10,7 +10,7 @@
     {
       "taskName": "default",
       "args": ["default"],
-      "isBuildCommand": true,
+      "isTestCommand": true,
       "problemMatcher": [
         "$lessCompile",
         "$tsc",

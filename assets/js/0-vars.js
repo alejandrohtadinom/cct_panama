@@ -1,5 +1,6 @@
 var 
     cursos = $('.section-cursos'),
+    curso = cursos.find('a'),
     cursoFig = cursos.find('figure'),
     cursoImg = cursoFig.find('img'),
 
@@ -7,4 +8,7 @@ var
     menuBtn = $('.menu-btn'),
     menuItem = menu.find('.menu-item'),
 
-    navBar = $('nav');
+    navBar = $('nav'),
+
+    formGroup = $('#formulario'),
+    inputTarget = formGroup.find('input');

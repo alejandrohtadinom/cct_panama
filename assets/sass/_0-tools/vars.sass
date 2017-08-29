@@ -33,3 +33,53 @@ $text: #444
     to
         width: 0
         background: transparent
+
+/*==================== Helpers ====================*/
+.spacer
+    width: 100%
+    height: 200vh
+
+.strong
+    font-weight: 900
+    text-transform: uppercase
+
+.light
+    font-weight: 300
+
+.sub-title
+    text-align: center
+    padding: 1rem
+    margin: 2em auto
+    text-transform: capitalize
+    font-weight: 900
+    font-size: 3em
+    color: lighten($text, 40)
+
+    &:after
+        content: ''
+        display: block
+        width: 0%
+        height: 4px
+        margin: 0 auto
+        background-color: $blue
+        transition: width .2s ease
+
+    &:hover
+        &:after
+            width: 20%
+
+.sticky
+    position: fixed
+    z-index: 999
+
+/*==================== Resets ====================*/
+body
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Biryani', sans-serif
+    color: $text
+    background: $bg-color
+
+.container
+    margin: 0 auto

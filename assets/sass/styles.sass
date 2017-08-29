@@ -1,56 +1,6 @@
 @import '_0-tools/0-tools'
 @import url('https://fonts.googleapis.com/css?family=Biryani:300,400,700,900')
 
-/*==================== Helpers ====================*/
-.spacer
-    width: 100%
-    height: 200vh
-
-.strong
-    font-weight: 900
-    text-transform: uppercase
-
-.light
-    font-weight: 300
-
-.sub-title
-    text-align: center
-    padding: 1rem
-    margin: 2em auto
-    text-transform: capitalize
-    font-weight: 900
-    font-size: 3em
-    color: lighten($text, 40)
-
-    &:after
-        content: ''
-        display: block
-        width: 0%
-        height: 4px
-        margin: 0 auto
-        background-color: $blue
-        transition: width .2s ease
-
-    &:hover
-        &:after
-            width: 20%
-
-.sticky
-    position: fixed
-    z-index: 999
-
-/*==================== Resets ====================*/
-body
-    margin: 0
-    padding: 0
-    box-sizing: border-box
-    font-family: 'Biryani', sans-serif
-    color: $text
-    background: $bg-color
-
-.container
-    margin: 0 auto
-
 /*==================== Headers ====================*/
 .main-header
     width: 100%
@@ -425,6 +375,10 @@ body
         top: 10px
         transition: all .2s ease
 
+    .text-light
+        left: 80%
+        color: #CCC
+
     input[type=text],
     input[type=email],
     textarea
@@ -461,6 +415,20 @@ body
         border-radius: 4px
         padding: .5em
         color: $white
+
+    select
+        appearance: none
+        background: $white
+        padding: .5em
+        font-size: 18px
+        border: none
+        border-bottom: 1px solid #757575
+        color: #999
+        overflow: hidden
+        cursor: pointer
+
+        &:focus
+            outline: none
 
     input[type=reset]
         @include red-gradient
